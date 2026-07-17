@@ -1,36 +1,6 @@
 #!/usr/bin/env python3
 import argparse
 
-ZSH_COMPLETION = """\
-#compdef obs
-
-_obs() {
-  local -a subcommands
-  subcommands=(
-    'pull:Pull the vault from the remote'
-    'push:Commit local changes and push the vault'
-    'sync:Pull, then commit and push the vault'
-    'completion:Print the zsh completion script'
-  )
-
-  _arguments -C \\
-    '(-h --help)'{-h,--help}'[show help message and exit]' \\
-    '(-m --message)'{-m,--message}'[commit message to use]:message:' \\
-    '1:command:->cmds' \\
-    '*::arg:->args'
-
-  case $state in
-    cmds)
-      _describe 'command' subcommands
-      ;;
-    args)
-      _arguments '(-h --help)'{-h,--help}'[show help message and exit]'
-      ;;
-  esac
-}
-
-_obs "$@"
-"""
 import os
 import subprocess
 import sys
