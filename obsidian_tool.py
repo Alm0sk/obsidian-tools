@@ -69,13 +69,13 @@ def build_parser():
     subparsers.add_parser("pull", help="Pull the vault from the remote.")
     subparsers.add_parser("push", help="Commit local changes and push the vault.")
     subparsers.add_parser("sync", help="Pull, then commit and push the vault.")
-    subparsers.add_parser("directory", help="Show the vault directory.")
+    subparsers.add_parser("directory", help="show the vault directory.")
 
     return parser
 
 
 def change_directory(vault_location):
-    os.chdir(vault_location)
+    print(vault_location)
     return True
 
 def main():
