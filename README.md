@@ -18,18 +18,10 @@ pipx install git+https://github.com/Alm0sk/obsidian-tools.git
 pipx install /path/to/obsidian-tools
 ```
 
-Then set the vault location (in `~/.zshrc`):
+Then set the vault location (in your shell profile):
 
 ```sh
 export obsidian_vault_location=/path/to/your/vault
-```
-
-### Zsh completion
-
-```sh
-sudo mkdir -p /usr/local/share/zsh/site-functions
-obs completion | sudo tee /usr/local/share/zsh/site-functions/_obs > /dev/null
-exec zsh
 ```
 
 ## Usage

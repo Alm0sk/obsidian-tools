@@ -69,7 +69,6 @@ def build_parser():
     subparsers.add_parser("pull", help="Pull the vault from the remote.")
     subparsers.add_parser("push", help="Commit local changes and push the vault.")
     subparsers.add_parser("sync", help="Pull, then commit and push the vault.")
-    subparsers.add_parser("completion", help="Print the zsh completion script.")
 
     return parser
 
@@ -77,10 +76,6 @@ def build_parser():
 def main():
     parser = build_parser()
     args = parser.parse_args()
-
-    if args.command == "completion":
-        print(ZSH_COMPLETION, end="")
-        sys.exit(0)
 
     check_env_var()
     vault_location = os.getenv("obsidian_vault_location")
