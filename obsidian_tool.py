@@ -69,9 +69,14 @@ def build_parser():
     subparsers.add_parser("pull", help="Pull the vault from the remote.")
     subparsers.add_parser("push", help="Commit local changes and push the vault.")
     subparsers.add_parser("sync", help="Pull, then commit and push the vault.")
+    subparsers.add_parser("directory", help="Show the vault directory.")
 
     return parser
 
+
+def change_directory(vault_location):
+    os.chdir(vault_location)
+    return True
 
 def main():
     parser = build_parser()
@@ -89,7 +94,8 @@ def main():
         ok = commit_and_push_vault(vault_location, commit_message)
     elif args.command == "sync":
         ok = pull_vault(vault_location) and commit_and_push_vault(vault_location, commit_message)
-
+    elif args.command == "directory":
+        ok = change_directory(vault_location)
     sys.exit(0 if ok else 1)
 
 

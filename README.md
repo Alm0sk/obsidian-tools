@@ -30,6 +30,7 @@ export obsidian_vault_location=/path/to/your/vault
 obs pull              # git pull the vault
 obs push              # git add -A, signed commit, push
 obs sync              # pull, then commit + push
+obs directory         # show the vault directory
 obs push -m "message" # custom commit message
 obs --help
 ```
